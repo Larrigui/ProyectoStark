@@ -1,7 +1,7 @@
 # ProyectoStark
 1. Clonar el repositorio.
 
-2. Todos los archivos que s descragan ahí ponerlo dentro de una carpeta. Ej.: app o stark.
+2. Todos los archivos que se descragan ponerlo dentro de una carpeta. Ej.: app o stark.
 
 3. Abrir en VSC.
 
