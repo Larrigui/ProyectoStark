@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarkCinema</title>
+    <script src="../static/js/form.js"></script>
+    <link rel="stylesheet" href="../static/css/CreateC.css">
+    <link rel="icon" href="../static/Photo/Logo.ico">
+</head>
+<body>
+    <header>
+        <div class="cabeza">
+            <a href="Home.html" ><img class="logo" src="../static/Photo/Logo.png" width="75px" height="50px"></a>
+        <nav>
+            <a href="#" class="algo">Cartelera</a>
+            <a href="#" class="algo">Pronto</a>
+            <a href="#" class="algo">Prox. Estrenos</a>
+            <input class="main" type="search" placeholder="Escribe para buscar">
+            <a href="Login.html" ><img class="perfil" src="../static/Photo/Perfil.png" width="50px" height="50px"></a>
+        </nav>
+        </div>
+    </header>
+    <div class="formulario">
+        <h1>Crear Cuenta</h1>
+        <form action="{{url_for('registro')}}"  method="post" name="formCuenta" id="formCuenta" onsubmit="validar_CreateC();">
+            <div class="username">
+                <input type="text" name="user" id="user" >
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="email">
+                <input type="email" name="userMail" id="userMail" >
+                <label>Correo Electronico</label>
+            </div>
+            <div class="emailconf">
+                <input type="email" name="cuseMail" id="cuserMail" >
+                <label>Confirmar Correo Electronico</label>
+            </div>
+            
+            <div class="password">
+                <input type="password" name="password" id="password" >
+                <label>Contraseña</label>
+            </div>
+
+            <img src="../static/photo/mostrar_ocultar.png" alt="mostrarContrasena" width="50" height="50" onmouseenter="mostrarContrasena()" onmouseleave="mostrarContrasena()">
+            
+            <p class="termCond">
+                <label><input type="checkbox" id="terminos" value="aceptar">Declaro haber leído y aceptar las condiciones generales del uso del portal y la normativa sobre protección de datos.</label>
+            </p>
+            
+            <button class="resgitrar" type="submit" value="Registrar" onclick="comprobarEmail()">Registrar</button>
+            <div class="registrarse">
+                <a href="Login.html">Regresar</a>
+            </div>
+            <div class="error">
+                <ul>
+                    {% for mensaje in errorMessages %}
+                    <li>{{mensaje}}</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </form>
+    </div>
+    </body>
+</html>
