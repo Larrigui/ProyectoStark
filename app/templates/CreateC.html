@@ -25,30 +25,38 @@
     <div class="formulario">
         <h1>Crear Cuenta</h1>
         <form action="{{url_for('registro')}}"  method="post" name="formCuenta" id="formCuenta" onsubmit="validar_CreateC();">
-            <div class="username">
-                <input type="text" name="user" id="user" >
-                <label>Nombre de Usuario</label>
-            </div>
-            <div class="email">
-                <input type="email" name="userMail" id="userMail" >
-                <label>Correo Electronico</label>
-            </div>
-            <div class="emailconf">
-                <input type="email" name="cuseMail" id="cuserMail" >
-                <label>Confirmar Correo Electronico</label>
-            </div>
             
-            <div class="password">
-                <input type="password" name="password" id="password" >
-                <label>Contraseña</label>
-            </div>
+            <!--Usuario-->
+            <input type="text" class="username" name="user" id="user" >
+            <label for="" class="usernamel">Nombre de Usuario</label>
+            
+            <!--Correo-->
+            <input type="email" class="email" name="userMail" id="userMail" >
+            <label for="" class="emaill">Correo Electronico</label>
+            
+            <!--Confirmar Correo-->
+            <input type="email" class="emailconf" name="cuseMail" id="cuserMail" >
+            <label for="" class="emailconfl">Confirmar Correo Electronico</label>
+            
+            <!--Icono mostrar clave-->
+            <img class="mostrar" src="../static/photo/mostrar_ocultar.png" alt="mostrarContrasena" width="25"
+                height="25" onmouseenter="mostrarContrasena()" onmouseleave="mostrarContrasena()">
 
-            <img src="../static/photo/mostrar_ocultar.png" alt="mostrarContrasena" width="50" height="50" onmouseenter="mostrarContrasena()" onmouseleave="mostrarContrasena()">
-            
-            <p class="termCond">
-                <label><input type="checkbox" id="terminos" value="aceptar">Declaro haber leído y aceptar las condiciones generales del uso del portal y la normativa sobre protección de datos.</label>
-            </p>
-            
+             <!--Contraseña-->
+            <input type="password" class="password" name="password" id="password" >
+            <label for="" class="passwordl">Contraseña</label>
+        
+            <!--Checkbox terminos y condiciones-->
+            <label class="container">
+                <input type="checkbox" checked="checked">
+                <div class="checkmark"></div>
+            </label>
+
+            <!--Texto terminos y condiciones-->
+            <p>Declaro haber leído y aceptar las condiciones generales del uso del portal y la normativa sobre
+                protección de datos.</p>
+ 
+            <!--boton registrar--> 
             <button class="resgitrar" type="submit" value="Registrar" onclick="comprobarEmail()">Registrar</button>
             <div class="registrarse">
                 <a href="Login.html">Regresar</a>
